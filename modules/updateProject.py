@@ -1,8 +1,10 @@
 import userDataHandling
 import datetime
 from createproject import inputData
-listOfProjects = userDataHandling.read_jaon("./modules/json/projects.json")
-onlineuserEmail = userDataHandling.read_jaon("./modules/json/onlineUsers.json")
+listOfProjects = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/projects.json")
+onlineuserEmail = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/onlineUsers.json")
 listOfUserProjects = []
 projectData = {}
 
@@ -45,13 +47,13 @@ def updateFromList():
                 listOfProjects[listOfProjects.index(p)] = projectData
                 # add the email of logged in user to the project dictionary
                 useremail = userDataHandling.read_jaon(
-                    "./modules/json/onlineUsers.json")
+                    "./Crowd-Funding_console-app/json/onlineUsers.json")
                 projectData["email"] = useremail["useremail"]
                 # add date of project creation
                 projectData["creation_date"] = datetime.datetime.now()
                 # write the file with the  list after update
                 userDataHandling.write_json(
-                    listOfProjects, "./modules/json/projects.json")
+                    listOfProjects, "./Crowd-Funding_console-app/json/projects.json")
                 print(f'your project {p["title"]} updated successfully')
                 # break
                 break

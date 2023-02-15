@@ -1,6 +1,7 @@
 import datetime
 import userDataHandling
-listofProjects = userDataHandling.read_jaon("./modules/json/projects.json")
+listofProjects = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/projects.json")
 
 
 def validatetimeinput():

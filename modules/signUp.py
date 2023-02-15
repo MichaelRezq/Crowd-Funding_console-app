@@ -7,7 +7,8 @@ import userDataHandling
 personalData = {}
 
 # list of the users that are already signed up
-listOfUsers = userDataHandling.read_jaon("./modules/json/usersData.json")
+listOfUsers = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/usersData.json")
 # generate Id using time
 
 
@@ -134,4 +135,4 @@ def getPersonalData():
     validatePhone()
     validatePassword()
     userDataHandling.append_json(
-        personalData, "./modules/json/usersData.json")
+        personalData, "./Crowd-Funding_console-app/json/usersData.json")

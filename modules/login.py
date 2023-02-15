@@ -3,7 +3,8 @@ import re
 
 
 # list of the users that are already signed up
-listOfUsers = userDataHandling.read_jaon("./modules/json/usersData.json")
+listOfUsers = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/usersData.json")
 # print(listOfUsers)
 
 # login form
@@ -26,7 +27,7 @@ def emailLogin():
                     userMail = {"useremail": mail}
                     # append the  user mail to online users json file
                     userDataHandling.write_json(
-                        userMail, "./modules/json/onlineUsers.json")
+                        userMail, "./Crowd-Funding_console-app/json/onlineUsers.json")
                 else:
                     print("looks like you didnot sign up yet , signup first")
                     break

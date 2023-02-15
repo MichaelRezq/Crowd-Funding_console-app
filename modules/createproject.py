@@ -7,7 +7,8 @@ projectData = {}
 
 def inputData():
     # create list of titles to prevent dublication of project titles
-    listofprojects = userDataHandling.read_jaon('./modules/json/projects.json')
+    listofprojects = userDataHandling.read_jaon(
+        './Crowd-Funding_console-app/json/projects.json')
     listofprojectstitles = []
     if len(listofprojects) > 0:
         for p in listofprojects:
@@ -56,11 +57,13 @@ def createProject():
     inputData()
     print('You created your project successfully')
     # add the email of the online user to the project dictionary
-    useremail = userDataHandling.read_jaon("./modules/json/onlineUsers.json")
+    useremail = userDataHandling.read_jaon(
+        "./Crowd-Funding_console-app/json/onlineUsers.json")
     projectData["email"] = useremail["useremail"]
     # add date of project creation
     projectData["creation_date"] = str(datetime.datetime.now().date())
-    userDataHandling.append_json(projectData, "./modules/json/projects.json")
+    userDataHandling.append_json(
+        projectData, "./Crowd-Funding_console-app/json/projects.json")
 
 
 # • Title

@@ -1,8 +1,9 @@
 import userDataHandling
 
-listOfProjects = userDataHandling.read_jaon("./modules/json/projects.json")
+listOfProjects = userDataHandling.read_jaon(
+    "./Crowd-Funding_console-app/json/projects.json")
 onlineuserEmail = userDataHandling.read_jaon(
-    "./modules/json/onlineUsers.json")
+    "./Crowd-Funding_console-app/json/onlineUsers.json")
 listOfUserProjects = []
 # print(onlineuserEmail["useremail"])
 
@@ -36,7 +37,7 @@ def delletefromlist():
             if p['title'] == choice:
                 listOfProjects.remove(p)
                 userDataHandling.write_json(
-                    listOfProjects, "./modules/json/projects.json")
+                    listOfProjects, "./Crowd-Funding_console-app/json/projects.json")
                 print(f'your project {p["title"]} deleted successfully')
                 break
             else:
